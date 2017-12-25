@@ -1,0 +1,21 @@
+= render partial: 'layout/flash', flash: flash
+
+.container
+  .h2.text-center Posts
+ 
+- if posts.count > 0  
+  .cards{style: 'width: 100%;max-width: 600px; margin: 0 auto 100px;'}
+    - posts.each do |post|
+      .card
+        %img.card-img-top.center-block{src: post.image_url, alt:"Card image cap"}
+        .card-block{style: 'padding-bottom: 10%;'}
+          .card-text
+            %i.text-center{"aria-hidden": true} 
+              = post.likes_count 
+              likes
+            .text-left
+              = post.text 
+            %a.btn.btn-primary.pull-right{ href: routes.post_path(post.id) } Watch
+- else
+  .alert.alert-info
+    %p.text-center No posts

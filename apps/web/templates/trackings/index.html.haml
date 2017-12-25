@@ -1,0 +1,17 @@
+= render partial: 'layout/flash', flash: flash
+
+.container
+  %h2.text-center Trackings
+
+- if trackings.count > 0 
+  .list-group.container
+    - trackings.each do |track| 
+      .list-group-item.row
+        .col.col-lg-10
+          %span
+            = track.ig_user.username
+        .col.col-lg-2
+          = form_destroy(track.id)
+- else
+  .alert.alert-info
+    %p.text-center You aren't tracking anybody

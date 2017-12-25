@@ -1,0 +1,19 @@
+= render partial: 'layout/flash', flash: flash
+
+.container
+  %h2.text-center Search by instagram username
+
+  = render partial: 'layout/params', params: params
+  = search_form 
+
+  - if users && users.count > 0 
+    .list-group.container{style: "padding-top: 1%;"}
+      - users.each do |user|
+        .list-group-item.row
+          .col.col-lg-2
+            %img{src: user.profile_picture, style:"width: 30px;"}
+          .col.col-lg-8
+            %span
+              = user.username
+          .col.col-lg-2
+            = form(user)

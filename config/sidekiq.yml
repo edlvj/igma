@@ -1,0 +1,3 @@
+:schedule:
+  FetchIgDataWorker:
+    every: 6h

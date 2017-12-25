@@ -1,0 +1,7 @@
+- unless params.valid? 
+  .alert.alert-info
+    %h3 There was a problem with your submission
+    %ul
+      - params.error_messages.each do |message|
+        %li 
+          = message 

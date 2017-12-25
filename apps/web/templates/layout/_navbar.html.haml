@@ -1,0 +1,19 @@
+%nav.navbar.navbar-inverse
+  .container-fluid
+    .navbar-header
+      %a.navbar-brand{ href:"/"} IGMA
+    %ul.nav.navbar-nav
+      %li
+        %a{ href:"/" } Posts
+      %li.dropdown
+        %a.dropdown-toggle{ href:"/", 'data-toggle':"dropdown" } 
+          Trackings
+          %span.caret 
+        %ul.dropdown-menu
+          %li
+            %a{ href:"/trackings/new" } Add
+          %li
+            %a{ href:"/trackings" } List
+      %li
+        = form_for :logout, routes.destroy_sessions_path, method: :delete do
+          - submit 'logout', class: 'btn btn-danger'

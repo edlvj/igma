@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+%html
+  %head
+    %meta{charset: "UTF-8"}
+    %title IGMA
+    = favicon 
+    = stylesheet 'bootstrap' 
+    = javascript 'jquery' 
+    = javascript 'bootstrap' 
+  %body
+    - if logged 
+      = render partial: 'layout/navbar' 
+    = yield 

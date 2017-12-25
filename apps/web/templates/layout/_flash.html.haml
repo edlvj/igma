@@ -1,0 +1,5 @@
+- %i(success info warning error).each do |type|
+  - if flash[type]
+    %div{ class: "alert alert-#{type} alert-dismissable text-center"}
+      %a{ href: "#", class: "close", "data-dismiss":"alert", "aria-label":"close"} &times;
+      = flash[type]
