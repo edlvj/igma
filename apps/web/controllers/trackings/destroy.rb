@@ -8,7 +8,7 @@ module Web::Controllers::Trackings
     end
 
     def call(params)
-    	if params.valid?
+      if params.valid?
         tracking_repo = TrackingRepository.new
         
         if tracking_repo.find(params[:id])

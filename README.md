@@ -1,10 +1,11 @@
 # Igma
 
 ##Requirements
+```
 ruby 2.3.1
 postgresql
 redis
-
+```
 ## Setup
 
 How to prepare (create and migrate) DB for `development` and `test` environments:
