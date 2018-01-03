@@ -1,8 +1,9 @@
 require 'rake'
 require 'hanami/rake_tasks'
+require './db/seeds'
 
 task seed: :environment do
-  SeedInteractor.new.call
+  Seeds.call
 end
 
 begin
